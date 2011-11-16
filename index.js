@@ -22,12 +22,13 @@ var getGitIoAddress = function(address, code, cb) {
     }
   }, function(res) {
     res.on('end', function() {
-      console.log(res);
-      var result = {
-        statusCode: res.statusCode,
-        url: res.headers.location || null
+
+      var passed = (res.statusCode < 300 && res.statusCode >= 200);
+      if (passed) {
+        cb(null, res.headers.location);
+      } else { 
+        cb(new Error('Git.io ' + res.headers.status));
       }
-      cb(null, result);
     });
 
     res.on('error', function(e) {

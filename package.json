@@ -1,6 +1,15 @@
 {
   "name": "gitio",
-  "version": "1.0.0",
+  "version": "1.0.1",
+  "author" : "Tane Piper <piper.tane@gmail.com>",
   "description": "Library for nodejs to call the git.io URL shortner",
-  "main": "./index"
+  "main": "./index",
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/tanepiper/node-gitio.git"
+  },
+  "bugs" : {
+    "url" : "http://github.com/tanepiper/node-gitio/issues"
+  },
+  "engines" : ["node >= 0.4.0"]
 }

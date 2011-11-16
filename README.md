@@ -10,11 +10,13 @@ Usage
     var gitio = require('gitio');
 
     // Pass a direct URL and get back a random URL
-    gitio('https://github.com/tanepiper/node-gitio', function(err, data) {
-      var url = data.url;
+    gitio('https://github.com/tanepiper/node-gitio', function(err, result) {
+      if (err) throw err;
+      console.log(result);
     });
 
     // Pass an optional key to get the URL of your request
-    gitio('https://github.com/joyent/node', 'nodejs', function(err, data) {
-      var url = data.url;
+    gitio('https://github.com/joyent/node', 'nodejs', function(err, result) {
+      if (err) throw err;
+      console.log(result);
     });
