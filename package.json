@@ -1,0 +1,6 @@
+{
+  "name": "gitio",
+  "version": "1.0.0",
+  "description": "Library for nodejs to call the git.io URL shortner",
+  "main": "./index"
+}
