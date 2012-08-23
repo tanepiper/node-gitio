@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/tanepiper/node-gitio.png)](http://travis-ci.org/tanepiper/node-gitio)
 Nodejs git.io module
 ====================
 
