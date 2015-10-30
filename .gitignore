@@ -101,3 +101,6 @@ crashlytics.properties
 crashlytics-build.properties
 
 nodenode# Created by .ignore support plugin (hsz.mobi)
+
+
+lib/
