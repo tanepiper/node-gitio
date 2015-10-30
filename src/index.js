@@ -15,6 +15,10 @@ var gitIo = (address, code) => {
 
     address = address.replace(/^http:\/\//i, 'https://');
 
+    if (!/^https:\/\/(github\.com)\/[A-Za-z0-9\?&=\-_\/]+$/.test(address)) {
+      return reject(Boom.badData('The url ' + address + ' is not a valid address for git.io'));
+    }
+
     let body = 'url=' + address + (code ? '&code=' + code : '');
     let req = request(
       Object.assign(
@@ -22,8 +26,9 @@ var gitIo = (address, code) => {
         REQUEST_CONFIG,
         { headers: { 'content-length': body.length } }
       ), (response) => {
+
         if (response.statusCode >= 400) {
-          return reject(Boom.create(response.statusCode, response.statusText, response));
+          return reject(Boom.create(response.statusCode, response.statusMessage, response));
         }
 
         var output = [];
