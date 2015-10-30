@@ -1,13 +1,12 @@
 'use strict';
 
-import { request } from 'http';
+import { request } from 'https';
 import Boom from 'boom';
 
 const REQUEST_CONFIG = {
   host: 'git.io',
-  port: 80,
   method: 'POST',
-  path: '/'
+  path: '/create'
 };
 
 var gitIo = (address, code) => {
@@ -23,7 +22,12 @@ var gitIo = (address, code) => {
         if (response.statusCode >= 400) {
           return reject(Boom.create(response.statusCode, response.statusText, response));
         }
-        return resolve(response.headers.location);
+
+        var output = [];
+
+        response.setEncoding('utf8');
+        response.on('data', (data) => output.push(data.toString()));
+        response.on('end', () => resolve('https://git.io/' + output.join('')));
     });
 
     req.on('error', (error) => {

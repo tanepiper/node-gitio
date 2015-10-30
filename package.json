@@ -1,7 +1,7 @@
 {
   "name": "gitio",
   "description": "Library for nodejs to call the git.io URL shortner",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "license": "MIT",
   "homepage": "https://github.com/tanepiper/node-gitio",
   "author": {
@@ -9,7 +9,19 @@
     "email": "piper.tane@gmail.com",
     "url": "https://github.com/tanepiper"
   },
+  "contributors": [ {
+    "name": "Felix Saparelli",
+    "email": "me@passcod.name",
+    "url": "https://github.com/passcod"
+  },  {
+    "name": "Lucas Hrabovsky",
+    "email": "hrabovsky.lucas@gmail.com",
+    "url": "https://github.com/imlucas"
+  }],
   "main": "lib/index.js",
+  "bin": {
+    "gitio": "lib/cli.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/tanepiper/node-gitio.git"
@@ -31,6 +43,7 @@
     "prepublish": "npm run compile"
   },
   "dependencies": {
-    "boom": "~2.10.0"
+    "boom": "~2.10.0",
+    "optimist": "~0.6.1"
   }
 }

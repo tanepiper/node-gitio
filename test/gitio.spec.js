@@ -5,14 +5,14 @@ describe('gitio library', () => {
 
   it('should return a valid short url from a github url', (done) => {
     gitio('https://github.com/tanepiper/node-gitio').then((result) => {
-      expect(result).to.equal('http://git.io/F6de');
+      expect(result).to.equal('https://git.io/F6de');
       done();
     }, done);
   });
 
   it('should return a valid short url when passed a code and github url', (done) => {
     gitio('https://github.com/tanepiper/jquery.ui.pwstrength', 'pwstrength').then((result) => {
-      expect(result).to.equal('http://git.io/pwstrength');
+      expect(result).to.equal('https://git.io/pwstrength');
       done();
     }, done)
   });

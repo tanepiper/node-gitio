@@ -2,7 +2,7 @@
 
 A Node.js module to call GitHub's [git.io url shortener service](https://github.com/blog/985-git-io-github-url-shortener).
 
-## Usage
+## Library Usage
 
 ```js
 import gitio from 'gitio'
@@ -33,3 +33,14 @@ The `github.com` URL to shorten.
 Type: `string`
 
 The shortened URL path.
+
+
+## Command line usage
+
+Install and use from the command line.  Takes a required github.com url, and an optional code as
+a second parameter.
+
+```
+> npm install -g gitio
+> gitio https://github.com/tanepiper [tanepiper]
+```
