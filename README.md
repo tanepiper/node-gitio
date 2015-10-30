@@ -5,24 +5,22 @@ A Node.js module to call GitHub's [git.io url shortener service](https://github.
 ## Usage
 
 ```js
-var gitio = require('gitio');
+import gitio from 'gitio'
 
 // Pass a direct URL and get back a random URL
-gitio('https://github.com/tanepiper/node-gitio', function(err, result) {
-  if (err) throw err;
+gitio('https://github.com/tanepiper/node-gitio').then((result) => {
   console.log(result);
 });
 
 // Pass an optional key to get the URL of your request
-gitio('https://github.com/joyent/node', 'nodejs', function(err, result) {
-  if (err) throw err;
+gitio('https://github.com/joyent/node', 'nodejs').then((result) => {
   console.log(result);
 });
 ```
 
 ## API
 
-### gitio(url, [code], cb)
+### gitio(url, [code])
 
 #### url
 
@@ -35,10 +33,3 @@ The `github.com` URL to shorten.
 Type: `string`
 
 The shortened URL path.
-
-#### callback(err, url)
-
-Type: `function`
-
-A callback invoked with two arguments; an error object if an error occurred,
-and the shortened URL.

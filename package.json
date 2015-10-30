@@ -1,15 +1,36 @@
 {
   "name": "gitio",
-  "version": "1.0.1",
-  "author" : "Tane Piper <piper.tane@gmail.com>",
   "description": "Library for nodejs to call the git.io URL shortner",
-  "main": "./index",
-  "repository" : {
-    "type" : "git",
-    "url" : "https://github.com/tanepiper/node-gitio.git"
+  "version": "2.0.0",
+  "license": "MIT",
+  "homepage": "https://github.com/tanepiper/node-gitio",
+  "author": {
+    "name": "Tane Piper",
+    "email": "piper.tane@gmail.com",
+    "url": "https://github.com/tanepiper"
   },
-  "bugs" : {
-    "url" : "http://github.com/tanepiper/node-gitio/issues"
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tanepiper/node-gitio.git"
   },
-  "engines" : ["node >= 0.4.0"]
+  "bugs": {
+    "url": "http://github.com/tanepiper/node-gitio/issues"
+  },
+  "engines": [
+    "node >= 0.12.0"
+  ],
+  "devDependencies": {
+    "babel": "~5.8.29",
+    "chai": "~3.4.0",
+    "mocha": "~2.3.3"
+  },
+  "scripts": {
+    "compile": "babel --source-maps --out-dir lib/ src/",
+    "test": "node_modules/.bin/mocha test/ --recursive --compilers js:babel/register",
+    "prepublish": "npm run compile"
+  },
+  "dependencies": {
+    "boom": "~2.10.0"
+  }
 }
