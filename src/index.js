@@ -12,6 +12,9 @@ const REQUEST_CONFIG = {
 var gitIo = (address, code) => {
 
   return new Promise((resolve, reject) => {
+
+    address = address.replace(/^http:\/\//i, 'https://');
+
     let body = 'url=' + address + (code ? '&code=' + code : '');
     let req = request(
       Object.assign(
