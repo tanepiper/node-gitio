@@ -2,15 +2,25 @@
 'use strict';
 
 import gitio from './index';
-import optimist from 'optimist';
+import yargs from 'yargs';
 
 
 let process = () => {
-  let program = optimist
+  let program = yargs
     .usage('Usage: $0 user/repo [-u github url] [-c code]')
-    .alias('u', 'url')
-    .alias('c', 'code')
+    .option('u', {
+     alias: 'url',
+     describe: "Github url",
+     demand: true
+    })
+    .option('c', {
+     alias: 'code',
+     describe: "Code",
+     demand: false
+    })
     .wrap(80)
+    .help('h')
+    .alias('h', 'help')
     .argv;
 
   let url = '';
@@ -28,6 +38,7 @@ let process = () => {
     }
   }
 
+  //TODO: this will never be reached because yargs is demanding url option
   if (!url) {
     return console.error(`${program.$0}: No URL passed`);
   }

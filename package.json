@@ -44,6 +44,6 @@
   },
   "dependencies": {
     "boom": "~2.10.0",
-    "optimist": "~0.6.1"
+    "yargs": "~3.29.0"
   }
 }
