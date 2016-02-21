@@ -1,13 +1,13 @@
 'use strict';
 
-import { expect } from 'chai';
-import { spawn } from 'child_process';
+const expect = require('chai').expect;
+const spawn = require('child_process').spawn;
 
 describe('git.io cli', function() {
   this.timeout(5000);
 
   it('should return a URL from a passed url', (done) => {
-    let run = spawn('babel-node', ['src/cli.js', '-u', 'https://github.com/tanepiper']);
+    const run = spawn('node', ['src/cli.js', '-u', 'https://github.com/tanepiper']);
 
     let stdout = '';
 

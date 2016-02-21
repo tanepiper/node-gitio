@@ -1,5 +1,7 @@
-import gitio from './../src';
-import { expect }  from 'chai';
+'use strict';
+
+const gitio = require('./../src/gitio');
+const expect = require('chai').expect;
 
 describe('gitio library', function() {
   this.timeout(5000);

@@ -9,16 +9,19 @@
     "email": "piper.tane@gmail.com",
     "url": "https://github.com/tanepiper"
   },
-  "contributors": [ {
-    "name": "Felix Saparelli",
-    "email": "me@passcod.name",
-    "url": "https://github.com/passcod"
-  },  {
-    "name": "Lucas Hrabovsky",
-    "email": "hrabovsky.lucas@gmail.com",
-    "url": "https://github.com/imlucas"
-  }],
-  "main": "lib/index.js",
+  "contributors": [
+    {
+      "name": "Felix Saparelli",
+      "email": "me@passcod.name",
+      "url": "https://github.com/passcod"
+    },
+    {
+      "name": "Lucas Hrabovsky",
+      "email": "hrabovsky.lucas@gmail.com",
+      "url": "https://github.com/imlucas"
+    }
+  ],
+  "main": "lib/gitio.js",
   "bin": {
     "gitio": "lib/cli.js"
   },
@@ -33,17 +36,14 @@
     "node >= 0.12.0"
   ],
   "devDependencies": {
-    "babel": "~5.8.29",
-    "chai": "~3.4.0",
-    "mocha": "~2.3.3"
+    "chai": "~3.5.0",
+    "mocha": "~2.4.5"
   },
   "scripts": {
-    "compile": "babel --source-maps --out-dir lib/ src/",
-    "test": "node_modules/.bin/mocha test/ --recursive --compilers js:babel/register",
-    "prepublish": "npm run compile"
+    "test": "node_modules/.bin/mocha test/ --recursive --compilers js:babel-core/register"
   },
   "dependencies": {
-    "boom": "~2.10.0",
-    "yargs": "~3.29.0"
+    "boom": "~3.1.2",
+    "yargs": "~4.1.0"
   }
 }

@@ -5,15 +5,15 @@ A Node.js module to call GitHub's [git.io url shortener service](https://github.
 ## Library Usage
 
 ```js
-import gitio from 'gitio'
+const gitio = require('gitio');
 
 // Pass a direct URL and get back a random URL
-gitio('https://github.com/tanepiper/node-gitio').then((result) => {
+gitio('https://github.com/tanepiper/node-gitio').then(result => {
   console.log(result);
 });
 
 // Pass an optional key to get the URL of your request
-gitio('https://github.com/joyent/node', 'nodejs').then((result) => {
+gitio('https://github.com/joyent/node', 'nodejs').then(result => {
   console.log(result);
 });
 ```
