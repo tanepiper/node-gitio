@@ -3,10 +3,11 @@
 import { expect } from 'chai';
 import { spawn } from 'child_process';
 
-describe('git.io cli', () => {
+describe('git.io cli', function() {
+  this.timeout(5000);
 
   it('should return a URL from a passed url', (done) => {
-    let run = spawn('babel-node', ['src/cli.js', 'https://github.com/tanepiper']);
+    let run = spawn('babel-node', ['src/cli.js', '-u', 'https://github.com/tanepiper']);
 
     let stdout = '';
 
