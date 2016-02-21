@@ -3,6 +3,7 @@
 import { request } from 'https';
 import Boom from 'boom';
 
+const URL_REGEX = /^https:\/\/(github\.com|raw\.githubusercontent\.com)\/[A-Za-z0-9\?&=\-_\.\/]+$/;
 const REQUEST_CONFIG = {
   host: 'git.io',
   method: 'POST',
@@ -15,7 +16,7 @@ var gitIo = (address, code) => {
 
     address = address.replace(/^http:\/\//i, 'https://');
 
-    if (!/^https:\/\/(github\.com)\/[A-Za-z0-9\?&=\-_\/]+$/.test(address)) {
+    if (!URL_REGEX.test(address)) {
       return reject(Boom.badData('The url ' + address + ' is not a valid address for git.io'));
     }
 
