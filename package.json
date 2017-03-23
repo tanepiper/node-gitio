@@ -1,7 +1,7 @@
 {
   "name": "gitio",
   "description": "Library for nodejs to call the git.io URL shortner",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "license": "MIT",
   "homepage": "https://github.com/tanepiper/node-gitio",
   "author": {
@@ -19,6 +19,10 @@
       "name": "Lucas Hrabovsky",
       "email": "hrabovsky.lucas@gmail.com",
       "url": "https://github.com/imlucas"
+    },
+    {
+      "name": "noformnocontent",
+      "url": "https://github.com/noformnocontent"
     }
   ],
   "main": "lib/gitio.js",
