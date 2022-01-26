@@ -1,5 +1,9 @@
 # `gitio`
 
+## Deprecation
+
+This module is now deprecated as the service no longer accepts requests, the code is only here for archive purposes
+
 A Node.js module to call GitHub's [git.io url shortener service](https://github.com/blog/985-git-io-github-url-shortener).
 
 ## Library Usage
